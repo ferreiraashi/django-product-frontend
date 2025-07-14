@@ -18,7 +18,7 @@ interface ProductDialogProps {
   editingProduct: Product | null;
   isSubmitting: boolean;
   onSubmit: (data: ProductFormData) => void;
-  onDelete?: (id: number) => void; // ✅ Novo: callback opcional para deletar
+  onDelete?: (id: number) => void;
 }
 
 const FORM_ID = 'product-form';

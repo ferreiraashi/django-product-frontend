@@ -22,8 +22,11 @@ export const createProduct = async (productData: ProductFormData): Promise<Produ
 };
 
 // UPDATE (PUT)
-export const updateProduct = async (id: number, productData: ProductFormData): Promise<Product> => {
-  const response = await apiClient.put(`/${id}`, productData);
+export const updateProduct = async (
+  id: number,
+  productData: Partial<ProductFormData>
+): Promise<Product> => {
+  const response = await apiClient.patch(`/${id}/`, productData);
   return response.data;
 };
 

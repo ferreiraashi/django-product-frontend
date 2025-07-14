@@ -8,9 +8,12 @@ export const productSchema = z.object({
   estoque: z.coerce.number().int().nonnegative({ message: "O estoque não pode ser negativo." }),
 });
 
+export const productUpdateSchema = productSchema.partial();
+export type ProductUpdateFormData = z.infer<typeof productUpdateSchema>;
+
+
 export type ProductFormData = z.infer<typeof productSchema>;
 
-// Tipo completo com o ID em minúsculas
 export interface Product extends ProductFormData {
   id: number;
 }
